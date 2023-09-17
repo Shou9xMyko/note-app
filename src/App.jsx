@@ -55,6 +55,8 @@ class App extends React.Component {
     const noteToArchive = this.state.initialData.find((note) => note.id == id);
 
     if (noteToArchive) {
+      noteToArchive.archived = true;
+
       const updateInitilData = this.state.initialData.filter(
         (note) => note.id != id
       );
@@ -76,14 +78,18 @@ class App extends React.Component {
 
   moveArchiveNoteHandle(id) {
     const moveArchive = this.state.archivedNote.filter((note) => note.id == id);
-    const deleteFromArchive = this.state.archivedNote.filter(
-      (note) => note.id != id
-    );
+    if (moveArchive) {
+      moveArchive[0].archived = false;
 
-    this.setState({
-      initialData: [...this.state.initialData, ...moveArchive],
-      archivedNote: deleteFromArchive,
-    });
+      const deleteFromArchive = this.state.archivedNote.filter(
+        (note) => note.id != id
+      );
+
+      this.setState({
+        initialData: [...this.state.initialData, ...moveArchive],
+        archivedNote: deleteFromArchive,
+      });
+    }
   }
 
   render() {

@@ -4,11 +4,24 @@ import React from "react";
 import NoteItemContent from "./NoteItemContent";
 import NoteItemAction from "./NoteItemAction";
 
-const NoteItem = ({ id, title, formatedDate, body, onDelete, onArchive }) => {
+const NoteItem = ({
+  id,
+  title,
+  formatedDate,
+  body,
+  archived,
+  onDelete,
+  onArchive,
+}) => {
   return (
     <div className="note-item" key={id}>
       <NoteItemContent title={title} formatedDate={formatedDate} body={body} />
-      <NoteItemAction id={id} onDelete={onDelete} onArchive={onArchive} />
+      <NoteItemAction
+        id={id}
+        archived={archived}
+        onDelete={onDelete}
+        onArchive={onArchive}
+      />
     </div>
   );
 };
