@@ -1,8 +1,8 @@
 import React from "react";
-import NoteArchive from "./component/NoteArchive";
-import NoteInput from "./component/NoteInput";
-import NoteList from "./component/NoteList";
-import NoteSearch from "./component/NoteSearch";
+import NoteArchive from "./components/NoteArchive";
+import NoteInput from "./components/NoteInput";
+import NoteList from "./components/NoteList";
+import NoteSearch from "./components/NoteSearch";
 import { getInitialData, showFormattedDate } from "./utils/utils";
 
 class App extends React.Component {
