@@ -20,19 +20,18 @@ class NoteInput extends React.Component {
   }
 
   handleChangeInputTitle(event) {
-    const limitCharInput = event.target.value;
+    const inputTitle = event.target.value;
 
-    if (limitCharInput.length <= 50) {
+    if (inputTitle.length <= 50) {
       this.setState({
-        inputTitle: event.target.value,
-        inputLength: 50 - limitCharInput.length,
+        inputTitle: inputTitle,
+        inputLength: 50 - inputTitle.length,
       });
     }
   }
   handleChangeInputBody(event) {
-    this.setState({
-      inputBody: event.target.value,
-    });
+    const inputBody = event.target.value;
+    this.setState({ inputBody });
   }
 
   handleSubmitCreateNote(event) {

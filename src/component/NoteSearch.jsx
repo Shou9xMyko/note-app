@@ -14,13 +14,16 @@ class NoteSearch extends React.Component {
   }
 
   handleChangeInputSearch(event) {
-    this.setState(() => {
-      return {
-        keyword: event.target.value,
-      };
-    });
+    const keyword = event.target.value;
 
-    this.props.keyword(this.state);
+    this.setState(
+      {
+        keyword: keyword,
+      },
+      () => {
+        this.props.keyword({ keyword });
+      }
+    );
   }
 
   render() {
