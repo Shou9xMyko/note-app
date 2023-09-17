@@ -26,8 +26,6 @@ class NoteList extends React.Component {
       note.title.toLowerCase().includes(searchKeyword.toLowerCase())
     );
 
-    console.log("ini notelist search", searchKeyword);
-
     return (
       <>
         <h2>Catatan Aktif</h2>
